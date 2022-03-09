@@ -8,55 +8,75 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 
-<body>
+<body class="has-background-info">
     <header class="has-background-link">
-        <div class="columns is-flex is-justify-content-center is-mobile pt-5">
+        <div class="columns is-flex is-justify-content-center pt-5">
 
-            <div class="column is-4">
-                <h1 class="pl-5 is-size-1 has-text-warning">Music Lover Search Engine</h1>
-                <p class="pl-5 is-flex is-size-4 is-flex-wrap-wrap has-text-warning">For Music Lovers Everywhere</p>
-            </div class="is-flex is-flex-wrap-wrap is-align-content-flex-start">
-            <figure class="image is-128x128">
+            <div class="column is-6 ">
+                <h1 class="pl-5 is-size-1 is-flex is-justify-content-center has-text-warning">Music Lover Search Engine
+                </h1>
+                <p class="pl-6 is-flex is-size-4 has-text-warning is-flex is-justify-content-center">For Music Lovers
+                    Everywhere</p>
+            </div class="is-flex is-align-content-flex-start">
+            <figure class="image is-128x128 pr-5">
                 <img class="is-rounded" src="./assets/images/musical-background.png">
             </figure>
         </div>
 
-        <div class="column buttons pl-5 is-flex is-justify-content-center is-mobile">
+        <div class="buttons pr-6 is-flex is-justify-content-center">
             <button class="button is-warning">Click Me</button>
+        </div>
+
+        <div class="column is-flex is-justify-content-center">
+            <p class="has-text-warning pr-6">Click The Button Above To Pull New Lyrics</p>
         </div>
     </header>
 
     <main>
-        <div>
-            <section>
-                <h1>See Lyrics Below</h1>
+        <div class="columns is-flex is-justify-content-center pr-6">
+            <div>
+                <section>
 
-            </section>
-            <section>
-                <p>Click The Button Above To Pull New Lyrics</p>
-            </section>
+                </section>
+
+                <section class="column">
+
+
+                    <div class="pb-6">
+                        <h1 class="has-text-warning is-flex is-justify-content-center">See Songs Below</h1>
+                        <textarea class="textarea" placeholder="Songs Will Display Here" rows="10">
+                            <ul>
+                                <li>hello</li>
+                            </ul>
+                        </textarea>
+
+            
+
+                    </div>
+
+                    <div>
+                        <h1 class="has-text-warning is-flex is-justify-content-center">See Lyrics Below</h1>
+                        <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea"></textarea>
+                        
+            
+                    </div>
+
+                </section>
+            </div>
+
         </div>
-        <div>
-            <textarea>
-                <ul></ul>
-            </textarea>
-
-        </div>
-
-        <div>
-            <textarea>
-                <p></p>
-            </textarea>
-        </div>
-    
-
-        <Footer>Music Lover &copy;
-
-        </Footer>
-
 
     </main>
 
+
+
+
+
+        <Footer class="has-text-warning pl-6 pt-6"> Music Lover &copy;
+
+        </Footer>
+
+   
 
 
     <script src="./assets/js/script.js"></script>
