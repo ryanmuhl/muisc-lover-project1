@@ -9,56 +9,79 @@
 </head>
 
 <body class="has-background-info">
-    <header class="has-background-link">
+    <header class="has-background-link pt-6">
         <div class="columns is-flex is-justify-content-center pt-5">
 
-            <div class="column is-6 ">
+            <div class="column is-4">
                 <h1 class="pl-5 is-size-1 is-flex is-justify-content-center has-text-warning">Music Lover Search Engine
                 </h1>
-                <p class="pl-6 is-flex is-size-4 has-text-warning is-flex is-justify-content-center">For Music Lovers
+
+                <p class="pl-6 pb-6 is-flex is-size- has-text-warning is-flex is-justify-content-center">For Music
+                    Lovers
                     Everywhere</p>
             </div class="is-flex is-align-content-flex-start">
             <figure class="image is-128x128 pr-5">
                 <img class="is-rounded" src="./assets/images/musical-background.png">
             </figure>
         </div>
-
-        <div class="buttons pr-6 is-flex is-justify-content-center">
-            <button class="button is-warning">Click Me</button>
-        </div>
-
-        <div class="column is-flex is-justify-content-center">
-            <p class="has-text-warning pr-6">Click The Button Above To Pull New Lyrics</p>
-        </div>
     </header>
+
+
+
 
     <main>
         <div class="columns is-flex is-justify-content-center pr-6">
             <div>
-                <section>
-
-                </section>
-
                 <section class="column">
 
 
                     <div class="pb-6">
-                        <h1 class="has-text-warning is-flex is-justify-content-center">See Songs Below</h1>
-                        <textarea class="textarea" placeholder="Songs Will Display Here" rows="10">
-                            <ul>
-                                <li>hello</li>
-                            </ul>
+
+                        <h1 class="has-text-warning is-flex is-justify-content-center pl-6">Type Celebrity Name</h1>
+
+                        <div class="buttons pr-6 is-flex is-justify-content-center">
+
+                            <button class="button is-warning">
+                                <ion-icon name="musical-notes-outline"></ion-icon>Click Me
+                            </button>
+
+                            <div>
+                                <input class="input is-rounded " type="text" placeholder="Celebrity Name">
+                            </div>
+                        </div>
+
+                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">See List of
+                            Songs</h3>
+                        <div class="box">
+
+
                         </textarea>
-
-            
-
                     </div>
 
-                    <div>
-                        <h1 class="has-text-warning is-flex is-justify-content-center">See Lyrics Below</h1>
-                        <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea"></textarea>
-                        
-            
+                    <div class="pb-6">
+
+                        <h3 class="has-text-warning is-flex is-justify-content-center pl-6">Type Song Name</h3>
+                        <div class="buttons pr-6 is-flex is-justify-content-center">
+
+                            <button class="button is-warning">
+                                <ion-icon name="musical-notes-outline"></ion-icon>Click Me
+
+                            </button>
+
+                            <div>
+                                <input name="musical-notes-outline" class="input is-rounded " type="text"
+                                    placeholder="Album Name">
+                            </div>
+                        </div>
+
+                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">See Album
+                            Lyrics Below</h3>
+
+                        <textarea class="textarea" readonly rows="10">
+
+
+                        </textarea>
+
                     </div>
 
                 </section>
@@ -72,11 +95,11 @@
 
 
 
-        <Footer class="has-text-warning pl-6 pt-6"> Music Lover &copy;
+    <Footer class="has-text-warning pl-6 pt-6"> Music Lover &copy;
 
-        </Footer>
+    </Footer>
 
-   
+
 
 
     <script src="./assets/js/script.js"></script>
