@@ -9,7 +9,13 @@
 
 //Query Selector for click me Buttons
 
+$("#click-celebrity").click(function(event){
+    var text = $("#type-artist-name").val();
+    console.log (text)
+    alert(text)
+    console.log (event)
 
+});
 
 //Fetch API info
 
