@@ -11,13 +11,34 @@
 
 $("#click-celebrity").click(function(event){
     var text = $("#type-artist-name").val();
-    console.log (text)
-    alert(text)
-    console.log (event)
+    
+    var requestUrl = "https://genius.p.rapidapi.com/search?q=" + text;
+
+fetch((requestUrl), {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "genius.p.rapidapi.com",
+		"x-rapidapi-key": "ac9ab99d33msh3d2e68d58bcbf83p143df8jsn672a2b9e440d"
+	}
+})
+.then(function (response) {
+  console.log (response)
+    return response.json();
+  })
+  .then(function (data) {
+         console.log (data)
+        
+         for (var i = 0; i < data.length; i++) {
+          console.log(data[i].url);
+          console.log(data[i].user.login);
+        }
+        }
+      );
 
 });
 
 //Fetch API info
+
 
 
 //Function/Logic
