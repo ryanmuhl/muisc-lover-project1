@@ -12,7 +12,7 @@
 $("#click-celebrity").click(function(event){
     var text = $("#type-artist-name").val();
     
-    var requestUrl = "https://genius.p.rapidapi.com/search?q=" + text;
+    var requestUrl = "https://genius.p.rapidapi.com/search?q=" + text + "/response/hits";
 
 fetch((requestUrl), {
 	"method": "GET",
@@ -28,10 +28,10 @@ fetch((requestUrl), {
   .then(function (data) {
          console.log (data)
         
-         for (var i = 0; i < data.length; i++) {
-          console.log(data[i].url);
-          console.log(data[i].user.login);
-        }
+        //  for (var i = 0; i < data.length; i++) {
+        //   console.log(data[i].response.hits);
+          
+        // }
         }
       );
 
