@@ -1,18 +1,15 @@
-//Research API Documentation
 
+//Click button then fetch artist data
+$("#click-celebrity").click(function(){
+    getArtistData()
+   
+});
 
-//Add API scripts
+//Function to fetch artist data
+var getArtistData = function () {
+  var text = $("#type-artist-name").val();
 
-
-//Need to declare Variables one Being a Function
-
-
-//Query Selector for click me Buttons
-
-$("#click-celebrity").click(function(event){
-    var text = $("#type-artist-name").val();
-    
-    var requestUrl = "https://genius.p.rapidapi.com/search?q=" + text + "/response/hits";
+var requestUrl = "https://genius.p.rapidapi.com/search?q=" + text;
 
 fetch((requestUrl), {
 	"method": "GET",
@@ -26,16 +23,15 @@ fetch((requestUrl), {
     return response.json();
   })
   .then(function (data) {
-         console.log (data)
+    var allSongs = data.response.hits
+    for (var i = 0; i < allSongs.length; i++)
+      
+    
+         console.log (allSongs[i].result.title)
         
-        //  for (var i = 0; i < data.length; i++) {
-        //   console.log(data[i].response.hits);
-          
-        // }
-        }
-      );
-
-});
+    
+  }
+      )};
 
 //Fetch API info
 
