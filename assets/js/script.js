@@ -1,3 +1,5 @@
+var songContainer = document.querySelector("#song-list")
+
 
 //Click button then fetch artist data
 $("#click-celebrity").click(function(){
@@ -19,15 +21,21 @@ fetch((requestUrl), {
 	}
 })
 .then(function (response) {
-  console.log (response)
     return response.json();
   })
   .then(function (data) {
     var allSongs = data.response.hits
     for (var i = 0; i < allSongs.length; i++)
-      
     
-         console.log (allSongs[i].result.title)
+      // console.log (allSongs[i].result.title)
+      var artistSongList = allSongs[i].result.title
+     
+      var artistSongs = document.createElement("li")
+      artistSongs.textContent = (artistSongList)
+      
+      
+      
+      songContainer.append(artistSongs)
         
     
   }
