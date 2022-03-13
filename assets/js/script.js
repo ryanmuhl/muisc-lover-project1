@@ -19,13 +19,15 @@ var getArtistData = function () {
     },
   })
     .then(function (response) {
+      console.log (response)
       return response.json();
-
+      
     })
+    
     .then(function (data) {
       var allSongs = data.response.hits; // are we only display the hits of the artist? we may need to make this clear to the user; Rihanna for example has over ten songs
-      console.log(data)
-      console.log(allSongs)
+      // console.log(data)
+      // console.log(allSongs)
 
       for (var i = 0; i < allSongs.length; i++) {
         var artistSongList = allSongs[i].result.title;
