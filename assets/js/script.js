@@ -36,7 +36,11 @@ var getArtistData = function () {
         var artistSongsText = document.createElement("a")
         artistSongsText.textContent = artistSongList;
 
-        artistSongsText.href = "#artistLink" ;
+        //artistSongsText.href = "artistLink" ;
+
+        artistSongsText.setAttribute('id', 'artistLink');
+
+        
 
 
 
@@ -47,12 +51,19 @@ var getArtistData = function () {
 
         songListArray.push(artistSongList);// push artist song list into this array
       }
+
       localStorage.setItem("text", JSON.stringify(songListArray));
+      document.getElementById("artistLink").addEventListener("click", nextAPI);
 
       //  store for loop to local storage here - localStorage.setItem(text,jSON.stringify(the array)) artist name is key = array
     });
 };
-$()
+function nextAPI(){
+  // $("#artistLink").click(function (Event){ Event.Target
+ return alert("This Definately Works");
+
+  }
+
 var getSongLink = function() {
 
   var requestUrlLink = "https://shazam.p.rapidapi.com/search?term=kiss%20the%20rain&locale=en-US&offset=0&limit=5"
