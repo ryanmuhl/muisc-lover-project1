@@ -3,6 +3,7 @@ var songListArray = [];
 //Click button then fetch artist data
 $("#click-celebrity").click(function () {
   getArtistData();
+  getSongLink()
 });
 
 //Function to fetch artist data
@@ -24,18 +25,18 @@ var getArtistData = function () {
     })
     .then(function (data) {
       var allSongs = data.response.hits; // are we only display the hits of the artist? we may need to make this clear to the user; Rihanna for example has over ten songs
-      console.log(data)
-      console.log(allSongs)
+      // console.log(data)
+      // console.log(allSongs)
 
       for (var i = 0; i < allSongs.length; i++) {
         var artistSongList = allSongs[i].result.title;
-        console.log(artistSongList)
+        // console.log(artistSongList)
 
         var artistSongs = document.createElement("li");
         var artistSongsText = document.createElement("a")
         artistSongsText.textContent = artistSongList;
 
-        artistSongsText.href = "#" + artistSongList;
+        artistSongsText.href = "#artistLink" ;
 
 
 
@@ -51,9 +52,23 @@ var getArtistData = function () {
       //  store for loop to local storage here - localStorage.setItem(text,jSON.stringify(the array)) artist name is key = array
     });
 };
+$()
+var getSongLink = function() {
 
-
-
+  var requestUrlLink = "https://shazam.p.rapidapi.com/search?term=kiss%20the%20rain&locale=en-US&offset=0&limit=5"
+  
+  fetch(requestUrlLink, {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "shazam.p.rapidapi.com",
+      "x-rapidapi-key": "20462df53amsh8d0409a5e8b7f2fp1522cejsn8fa1bed5cd51"
+    }
+  })
+  .then(function (response) {
+    console.log(response)
+    return response.json();
+  })
+}
 //Fetch API info
 
 
