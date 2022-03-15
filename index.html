@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@DAVMCKII 
+ryanmuhl
+/
+music-lover-project1
+Public
+Code
+Issues
+1
+Pull requests
+Actions
+Projects
+1
+Wiki
+Security
+Insights
+music-lover-project1/index.html
+@ryanmuhl
+ryanmuhl add clear button to list form
+Latest commit 408c3e9 19 minutes ago
+ History
+ 1 contributor
+148 lines (90 sloc)  4.6 KB
+   
 <!DOCTYPE html>
 <html>
 
@@ -6,6 +36,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Music Lover</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
 </head>
 
 <body class="has-background-info">
@@ -29,11 +60,10 @@
 
 
 
-    <main>
-        <div class="columns is-flex is-justify-content-center pr-6">
+    <main class="is-flex is-justify-content-center pt-6">
+        <section class="columns is-flex is-justify-content-center pr-6">
             <div>
-                <section class="column">
-
+                <div class="column" style="height: 80vw">
 
                     <div class="pb-6">
 
@@ -41,12 +71,20 @@
 
                         <div class="buttons pr-6 is-flex is-justify-content-center">
 
+                            <button class="button is-warning">
+                                <ion-icon name="musical-notes-outline"></ion-icon>Clear Lists
+
+                            </button>
+
                             <button class="button is-warning" id="click-celebrity">
                                 <ion-icon name="musical-notes-outline"></ion-icon>Click Me
                             </button>
 
+                            
+
                             <div>
-                                <input id="type-artist-name" class="input is-rounded " type="text" placeholder="Celebrity Name">
+                                <input id="type-artist-name" class="input is-rounded " type="text"
+                                    placeholder="Celebrity Name">
                             </div>
                         </div>
 
@@ -58,36 +96,60 @@
                             </ul>
                         </div>
                         
+
                     </div>
+
+                    
 
                     <div class="pb-6">
 
                         <!-- <h3 class="has-text-warning is-flex is-justify-content-center pl-6">Type Song Name</h3>
                         <div class="buttons pr-6 is-flex is-justify-content-center">
-
                             <button class="button is-warning">
                                 <ion-icon name="musical-notes-outline"></ion-icon>Click Me
-
                             </button>
-
                             <div>
                                 <input name="musical-notes-outline" class="input is-rounded " type="text"
                                     placeholder="Song">
                             </div>
                         </div> -->
 
-                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">See Song
-                            Lyrics Below</h3>
+                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">Shazam Song Link
+                            
+                        </h3>
 
                             <div class="box">
+                                <ul id="text-list">
 
+                                </ul>
 
-                        
-                            </div>
+                        </div>
 
                     </div>
 
-                </section>
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <div class="buttons is-flex is-align-content-flex-start pt-4 ">
+
+            <button class="button is-warning">
+                <ion-icon name="musical-notes-outline"></ion-icon>Clear Playlist
+
+            </button>
+
+            <div>
+
+                <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">My Playlist Favorites</h3>
+
+                <div class="box">
+                    <ul>
+
+                    </ul>
+                </div>
             </div>
 
         </div>
@@ -111,3 +173,16 @@
 </body>
 
 </html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
