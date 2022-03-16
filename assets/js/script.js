@@ -93,9 +93,12 @@ function getSongLink(param){
     var textList = data.tracks.hits
     var videoTextList = textList[0].track.share.href;
     var textListVideo = document.createElement("li");
+    var textListVideoA = document.createElement("a");
+    textListVideoA.setAttribute("href",  videoTextList)
       
       videoContainer.append(textListVideo)
-      textListVideo.append(videoTextList)
+      textListVideo.append(textListVideoA)
+      textListVideoA.append(videoTextList)
 
       // songListArray.push(artistSongList);// push artist song list into this array
 
@@ -104,7 +107,7 @@ function getSongLink(param){
       // localStorage.setItem("text", JSON.stringify(songListArray));
 
       $("#save-local").click(function () {
-  
+        
         songListArray.push(videoTextList);
         localStorage.setItem("text", JSON.stringify(songListArray));
         
