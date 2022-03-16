@@ -46,10 +46,10 @@ var getArtistData = function () {
         artistSongs.append(artistSongsText)
 
 
-        songListArray.push(artistSongList);
+        // songListArray.push(artistSongList);
       }
 
-      localStorage.setItem("text", JSON.stringify(songListArray));
+      // localStorage.setItem("text", JSON.stringify(songListArray));
 
       for (i = 0; i < 10; i++) {
 
@@ -98,13 +98,40 @@ function getSongLink(param){
       textListVideo.append(videoTextList)
 
       // songListArray.push(artistSongList);// push artist song list into this array
-    
 
+      // songListArray.push(videoTextList);
+      
+      // localStorage.setItem("text", JSON.stringify(songListArray));
+
+      $("#save-local").click(function () {
+  
+        songListArray.push(videoTextList);
+        localStorage.setItem("text", JSON.stringify(songListArray));
+        
+      });
+
+      
   });
+
 };
 
 
 
+
+
+// function saveButtun () {
+
+//   songListArray.push(videoTextList);
+//   localStorage.setItem("text", JSON.stringify(songListArray));
+      
+// }
+
+
+
+$("#clear-playlist").click(function () {
+  localStorage.clear();
+  
+});
 
 
 
