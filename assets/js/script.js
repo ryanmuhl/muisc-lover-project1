@@ -105,21 +105,19 @@ function getSongLink(param){
       // songListArray.push(videoTextList);
       
       // localStorage.setItem("text", JSON.stringify(songListArray));
+      songListArray.push(videoTextList);
 
       $("#save-local").click(function () {
         
-        songListArray.push(videoTextList);
+        
         localStorage.setItem("text", JSON.stringify(songListArray));
         
       });
-
+      
       
   });
 
 };
-
-
-
 
 
 // function saveButtun () {
@@ -137,6 +135,11 @@ $("#clear-playlist").click(function () {
 });
 
 
+$("#clear").click(function (){
+  var clearAllLists = document.getElementById("song-list")
+  $("li").empty()
+
+});
 
 
 
