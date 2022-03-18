@@ -1,7 +1,7 @@
 var songContainer = document.querySelector("#song-list");
 var videoContainer = document.querySelector("#text-list");
+var list = document.querySelector("#favorites")
 
-var songListArray = [];
 //Click button to fetch Artist Data
 $("#click-celebrity").click(function () {
   getArtistData();
@@ -54,7 +54,8 @@ var getArtistData = function () {
       for (i = 0; i < 10; i++) {
 
        //click event to target feth data from Genius API 
-      document.getElementById("artist-"+ i).addEventListener("click", nextAPI);
+      document.getElementById("artist-"+ i).addEventListener("click", nextAPI)
+      
     }
 
       //  store for loop to local storage here - localStorage.setItem(text,jSON.stringify(the array)) artist name is key = array
@@ -65,7 +66,7 @@ var getArtistData = function () {
 //to getSongLink parameter
 function nextAPI(event){
 
-
+$("#text-list").empty()
  var songName = event.target.text
   getSongLink(songName)
 
@@ -73,7 +74,7 @@ function nextAPI(event){
 
 //Function to Fetch Shazam API
 function getSongLink(param){
-
+  
 
   var requestUrlLink = "https://shazam.p.rapidapi.com/search?term="+ param +"&locale=en-US&offset=0&limit=5"
   
@@ -100,46 +101,59 @@ function getSongLink(param){
       textListVideo.append(textListVideoA)
       textListVideoA.append(videoTextList)
 
-      // songListArray.push(artistSongList);// push artist song list into this array
 
-      // songListArray.push(videoTextList);
       
-      // localStorage.setItem("text", JSON.stringify(songListArray));
-      songListArray.push(videoTextList);
-
+      
       $("#save-local").click(function () {
-        
-        
-        localStorage.setItem("text", JSON.stringify(songListArray));
-        
+       
+        saveButton(videoTextList)
       });
-      
-      
-  });
-
-};
-
-
-// function saveButtun () {
-
-//   songListArray.push(videoTextList);
-//   localStorage.setItem("text", JSON.stringify(songListArray));
-      
-// }
-
-
-
-$("#clear-playlist").click(function () {
-  localStorage.clear();
+        
+        
+    });
   
-});
+  };
+  
+  function saveButton (info) {
+    var songListArray = JSON.parse(window.localStorage.getItem("text")) || [];
+
+      if (saveButton){
+        
+      songListArray.push(info);
+      localStorage.setItem("text", JSON.stringify(songListArray));
+      
+ 
+      for (i = 0; i < songListArray.length; i++) {
+
+        var listContent = document.createElement("li")
+        listContent.textContent = (songListArray[i])
+        list.append(listContent)
+        console.log ("inside for Loop")
+        
+    }  
+  } 
+       
+ }
 
 
-$("#clear").click(function (){
-  var clearAllLists = document.getElementById("song-list")
-  $("li").empty()
+ $("#clear-playlist").click(function () {
+   localStorage.clear();
+   
+ });
+ 
+ 
+ $("#clear").click(function (){
+   var clearAllLists = document.getElementById("song-list")
+   $(clearAllLists).empty()
+ 
+ });
 
-});
+
+
+
+
+
+
 
 
 
