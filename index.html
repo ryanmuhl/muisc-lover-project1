@@ -28,17 +28,17 @@
     </header>
 
 
-    <main class="is-flex is-justify-content-center pt-6">
-        <section class="columns is-flex is-justify-content-center pr-6">
+    <main class="is-flex is-justify-content-center is-flex-wrap-wrap pt-6">
+        <section class="column is-flex is-justify-content-center pr-6">
             <div>
-                <div class="column" style="height: 80vw">
+                <div class="column">
 
                     <div class="pb-6">
 
-                        <h1 class="has-text-warning is-flex is-justify-content-center pl-6">Type Celebrity Name</h1>
-
+                        
+                        
                         <div class="buttons pr-6 is-flex is-justify-content-center">
-
+                            
                             <button class="button is-warning" id="clear">
                                 <ion-icon name="musical-notes-outline"></ion-icon>Clear Lists
 
@@ -47,7 +47,7 @@
                             
 
                             <button class="button is-warning" id="click-celebrity">
-                                <ion-icon name="musical-notes-outline"></ion-icon>Click Me
+                                <ion-icon name="musical-notes-outline"></ion-icon>Click For Top 10 Songs
                             </button>
 
                             
@@ -58,8 +58,8 @@
                             </div>
                         </div>
 
-                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">See List of
-                            Songs</h3>
+                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">See List Of
+                            Songs / Select Song</h3>
                         <div class="box">
                             <ul id="song-list">
 
@@ -73,7 +73,7 @@
 
                     <div class="pb-6">
 
-                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">Shazam Song Link
+                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">Select Shazam Song Link To Listen To Song
                             
                         </h3>
 
@@ -93,22 +93,23 @@
 
         </section>
 
-        <div class="buttons is-flex is-align-content-flex-start pt-4 ">
+        <div class="buttons is-flex is-align-content-flex-start pt-4 pr-6 " style="height: 80vw">
 
-            <button class="button is-warning" id="clear-playlist">
-                <ion-icon name="musical-notes-outline"></ion-icon>Clear Playlist
-
-            </button>
-            <button class="button is-warning" id="save-local">
+           
+            <!-- <button class="button is-warning" id="save-local">
                 <ion-icon name="musical-notes-outline"></ion-icon>Save Songs To Playlist
 
-            </button>
+            </button> -->
 
-            <div>
+            <div class="pt-5">
+                <button class="button is-warning is-justify-content-center" id="clear-playlist">
+                    <ion-icon name="musical-notes-outline"></ion-icon>Clear Playlist
+    
+                </button>
 
-                <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">My Playlist Favorites</h3>
+                <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">My Playlist</h3>
 
-                <div class="box">
+                <div class="box" style="width: 40vw">
                     <ul id="favorites">
 
                     </ul>

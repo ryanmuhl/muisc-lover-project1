@@ -2,6 +2,7 @@ var songContainer = document.querySelector("#song-list");
 var videoContainer = document.querySelector("#text-list");
 var list = document.querySelector("#favorites")
 
+
 //Click button to fetch Artist Data
 $("#click-celebrity").click(function () {
   getArtistData();
@@ -30,6 +31,7 @@ var getArtistData = function () {
     .then(function (data) {
       var allSongs = data.response.hits;
 
+      $(songContainer).empty()
       for (var i = 0; i < allSongs.length; i++) {
         var artistSongList = allSongs[i].result.title;
 
@@ -41,9 +43,9 @@ var getArtistData = function () {
 
         artistSongsText.setAttribute('id', "artist-" + i);
 
-
-        songContainer.append(artistSongs);
         artistSongs.append(artistSongsText)
+        songContainer.append(artistSongs);
+        
 
 
         // songListArray.push(artistSongList);
@@ -96,61 +98,79 @@ function getSongLink(param) {
       var textListVideo = document.createElement("li");
       var textListVideoA = document.createElement("a");
       textListVideoA.setAttribute("href", videoTextList)
+      textListVideoA.setAttribute("target", "_blank")
 
       videoContainer.append(textListVideo)
       textListVideo.append(textListVideoA)
       textListVideoA.append(videoTextList)
 
+      //delegate following functionality to a new function
+      //call new function here and bottom of code
+      //new function recieves a parameter which is the url of song
+      //if parameter contains value then push parameter to song list array
+      loadingPlaylistText (videoTextList)
+      
 
-
-
-      $("#save-local").click(function () {
-
-        saveButton(videoTextList)
       });
-
-
-    });
 
 };
 
-function saveButton(info) {
-  var songListArray = JSON.parse(window.localStorage.getItem("text")) || [];
+function loadingPlaylistText (songUrl) {
+  
+    var songListArray = JSON.parse(window.localStorage.getItem("text")) || [];
 
-  if (saveButton) {
+    if (songUrl) {
+      songListArray.push(songUrl);
+    }
 
-    songListArray.push(info);
     localStorage.setItem("text", JSON.stringify(songListArray));
 
+    saveClick (songListArray)
 
-    for (i = 0; i < songListArray.length; i++) {
+}
 
-      var listContent = document.createElement("li")
-      listContent.textContent = (songListArray[i])
-      list.append(listContent)
-      console.log("inside for Loop")
 
-    }
+
+function saveClick(info) {
+  $(list).empty()
+  for (i=0; i < info.length; i++) {     
+  var listContent = document.createElement("li")
+  listContent.textContent = (info[i])
+  list.append(listContent)
   }
 
 }
 
 
 $("#clear-playlist").click(function () {
+  if ("clear-playlist") {
+    $(favorites).empty()
+  }
   localStorage.clear();
+  window.location.reload();
 
 });
 
 
 $("#clear").click(function () {
   var clearAllLists = document.getElementById("song-list")
+  // var clearTextList = document.getElementById("text-list")
   $(clearAllLists).empty()
+  $(clear).empty()
+  window.location.reload();
+  
 
 });
 
+loadingPlaylistText ()
 
 
+ //delegate following functionality to a new function
+      //call new function here and bottom of code
+      //new function recieves a parameter which is the url of song
+      //if parameter contains value then push parameter to song list array
 
+//call function that populates playlist from local storage
 
 
 
