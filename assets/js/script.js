@@ -1,9 +1,10 @@
+//Declair Global Variables
 var songContainer = document.querySelector("#song-list");
 var videoContainer = document.querySelector("#text-list");
 var list = document.querySelector("#favorites")
 
 
-//Click button to fetch Artist Data
+//Click button to fetch Artist Data/Top 10 Songs for Artist
 $("#click-celebrity").click(function () {
   getArtistData();
 
@@ -23,7 +24,6 @@ var getArtistData = function () {
     },
   })
     .then(function (response) {
-      console.log(response)
       return response.json();
 
     })
@@ -35,7 +35,8 @@ var getArtistData = function () {
       for (var i = 0; i < allSongs.length; i++) {
         var artistSongList = allSongs[i].result.title;
 
-
+        //Append List of top 10 songs to DIV/UL
+        //Assign each Li an unique id
         var artistSongs = document.createElement("li");
         var artistSongsText = document.createElement("a")
         artistSongsText.textContent = artistSongList;
@@ -45,14 +46,11 @@ var getArtistData = function () {
 
         artistSongs.append(artistSongsText)
         songContainer.append(artistSongs);
-        
 
-
-        // songListArray.push(artistSongList);
       }
 
-      // localStorage.setItem("text", JSON.stringify(songListArray));
-
+      //Create Click Event for each Song within top 10 Song List
+      //This allows user to click on song and fetch Shazam API info
       for (i = 0; i < 10; i++) {
 
         //click event to target feth data from Genius API 
@@ -60,7 +58,6 @@ var getArtistData = function () {
 
       }
 
-      //  store for loop to local storage here - localStorage.setItem(text,jSON.stringify(the array)) artist name is key = array
     });
 };
 
@@ -100,48 +97,45 @@ function getSongLink(param) {
       textListVideoA.setAttribute("href", videoTextList)
       textListVideoA.setAttribute("target", "_blank")
 
+      //Append song link/url to song link field
       videoContainer.append(textListVideo)
       textListVideo.append(textListVideoA)
       textListVideoA.append(videoTextList)
 
-      //delegate following functionality to a new function
-      //call new function here and bottom of code
-      //new function recieves a parameter which is the url of song
-      //if parameter contains value then push parameter to song list array
-      loadingPlaylistText (videoTextList)
-      
+      loadingPlaylistText(videoTextList)
 
-      });
+
+    });
 
 };
 
-function loadingPlaylistText (songUrl) {
-  
-    var songListArray = JSON.parse(window.localStorage.getItem("text")) || [];
+//Function to keep local storage persistant when page reloads (Song List remains when page reloads)
+function loadingPlaylistText(songUrl) {
 
-    if (songUrl) {
-      songListArray.push(songUrl);
-    }
+  var songListArray = JSON.parse(window.localStorage.getItem("text")) || [];
 
-    localStorage.setItem("text", JSON.stringify(songListArray));
+  if (songUrl) {
+    songListArray.push(songUrl);
+  }
 
-    saveClick (songListArray)
+  localStorage.setItem("text", JSON.stringify(songListArray));
+
+  saveClick(songListArray)
 
 }
 
-
-
+//function to Save to local storage when an individual song link is selected
 function saveClick(info) {
   $(list).empty()
-  for (i=0; i < info.length; i++) {     
-  var listContent = document.createElement("li")
-  listContent.textContent = (info[i])
-  list.append(listContent)
+  for (i = 0; i < info.length; i++) {
+    var listContent = document.createElement("li")
+    listContent.textContent = (info[i])
+    list.append(listContent)
   }
 
 }
 
-
+//function to Clear Playlist/Local Storage when button is selected (Also reloads browser)
 $("#clear-playlist").click(function () {
   if ("clear-playlist") {
     $(favorites).empty()
@@ -151,26 +145,18 @@ $("#clear-playlist").click(function () {
 
 });
 
-
+//function to Clear List of Songs and URL (Also reloads browser)
 $("#clear").click(function () {
   var clearAllLists = document.getElementById("song-list")
-  // var clearTextList = document.getElementById("text-list")
   $(clearAllLists).empty()
   $(clear).empty()
   window.location.reload();
-  
+
 
 });
 
-loadingPlaylistText ()
+loadingPlaylistText()
 
-
- //delegate following functionality to a new function
-      //call new function here and bottom of code
-      //new function recieves a parameter which is the url of song
-      //if parameter contains value then push parameter to song list array
-
-//call function that populates playlist from local storage
 
 
 
