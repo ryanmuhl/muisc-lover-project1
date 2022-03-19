@@ -59,10 +59,10 @@ Created/Designed by:
 
 ## Student: Ashley Lawrence
 * Email: ashdmt39@gmail.com
-* Portfolio Repository: https://chlovanna.github.io/The-Asset-Why-Not/
+* Portfolio Repository: https://github.com/Chlovanna/The-Asset-Why-Not
 
 ## Student: David McKinney
-* Email: mckdav98@gail.com
+* Email: mckdav98@gmail.com
 * Portfolio Repository: https://github.com/DAVMCKII/my-portfolio
 
 ## Student: Ryan Uhl
