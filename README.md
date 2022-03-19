@@ -27,7 +27,7 @@ So that I can create a diverse play list, including a link to to song content al
 
 
 # Ice-Box/Future Functionality
-* Future functionality will include abilitiy within playlist field to delete unwanted songs.
+* Future functionality will include ability within playlist field to delete unwanted songs.
 * Future functionality will include a picture of the album associated with the song
 * Future functionality will include the ability to play song directy from web page within playlist
   
