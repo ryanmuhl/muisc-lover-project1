@@ -57,15 +57,15 @@ https://github.com/ryanmuhl/music-lover-project1
 ## Contributions
 Created/Designed by:
 
-* Student: Ashley Lawrence
+## Student: Ashley Lawrence
 * Email: ashdmt39@gmail.com
 * Portfolio Repository: https://chlovanna.github.io/The-Asset-Why-Not/
 
-* Student: David McKinney
+## Student: David McKinney
 * Email: mckdav98@gail.com
 * Portfolio Repository: https://github.com/DAVMCKII/my-portfolio
 
-* Student: Ryan Uhl
+## Student: Ryan Uhl
 * Email: ryanmuhl@hotmail.com
 * Portfolio Repository: https://github.com/ryanmuhl/ryanmuhl-portfolio
 
