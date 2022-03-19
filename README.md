@@ -15,6 +15,15 @@ So that I can create a diverse play list, including a link to to song content al
 * When Clear Lists button is selected, See List OF Songs and Select Shazam Song content will clear.  Local storage and playlist will remain until clear playlist button is selected. 
 * When Clear Playlist button is selected,  all content on page will clear (including local storage), and page will re-load.
 
+## Project Requirments/Criteria Met
+* Two Server Side API's used to create application (Shazam, Genius)
+* CSS Framework other than Bootstrap used to create Application (Bulma)
+* Client Side Storage used for persistant data 
+* UI is Mobile-First and functioning properly
+* Coding Standards used to meet quality 
+* No prompts or alerts used in application
+* Project has been deployed to Git Hub Pages
+* Project is interacive and accepts user input 
 
 
 # Ice-Box/Future Functionality
