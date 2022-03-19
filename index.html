@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 
+<!--Start Head Section-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Music Lover</title>
+    <!-- Bulma Stylesheet-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 </head>
+<!--End Head Section-->
+
+<!--Start Body -->
 
 <body class="has-background-info">
+
+    <!--Start Header Section -->
     <header class="has-background-link pt-6">
         <div class="columns is-flex is-justify-content-center pt-5">
 
@@ -26,31 +33,34 @@
             </figure>
         </div>
     </header>
+    <!--End Header Section-->
 
+    <!--Start Main Content Section -->
+    <main class="is-flex is-justify-content-center is-flex-wrap-wrap pt-6">
 
-
-
-    <main class="is-flex is-justify-content-center pt-6">
-        <section class="columns is-flex is-justify-content-center pr-6">
+        <!-- Start Section For Search API and display songs/url section -->
+        <section class="column is-flex is-justify-content-center pr-6">
             <div>
-                <div class="column" style="height: 80vw">
+                <div class="column">
 
                     <div class="pb-6">
 
-                        <h1 class="has-text-warning is-flex is-justify-content-center pl-6">Type Celebrity Name</h1>
+
 
                         <div class="buttons pr-6 is-flex is-justify-content-center">
 
-                            <button class="button is-warning">
+                            <button class="button is-warning" id="clear">
                                 <ion-icon name="musical-notes-outline"></ion-icon>Clear Lists
 
                             </button>
 
+
+
                             <button class="button is-warning" id="click-celebrity">
-                                <ion-icon name="musical-notes-outline"></ion-icon>Click Me
+                                <ion-icon name="musical-notes-outline"></ion-icon>Click For Top 10 Songs
                             </button>
 
-                            
+
 
                             <div>
                                 <input id="type-artist-name" class="input is-rounded " type="text"
@@ -58,43 +68,30 @@
                             </div>
                         </div>
 
-                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">See List of
-                            Songs</h3>
+                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">See List Of
+                            Songs / Select Song</h3>
                         <div class="box">
                             <ul id="song-list">
 
                             </ul>
                         </div>
-                        
+
 
                     </div>
 
-                    
+
 
                     <div class="pb-6">
 
-                        <!-- <h3 class="has-text-warning is-flex is-justify-content-center pl-6">Type Song Name</h3>
-                        <div class="buttons pr-6 is-flex is-justify-content-center">
+                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">Select Shazam
+                            Song Link To Listen To Song
 
-                            <button class="button is-warning">
-                                <ion-icon name="musical-notes-outline"></ion-icon>Click Me
-
-                            </button>
-
-                            <div>
-                                <input name="musical-notes-outline" class="input is-rounded " type="text"
-                                    placeholder="Song">
-                            </div>
-                        </div> -->
-
-                        <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">Shazam Song Link
-                            
                         </h3>
 
-                            <div class="box">
-                                <ul id="text-list">
+                        <div class="box">
+                            <ul id="text-list">
 
-                                </ul>
+                            </ul>
 
                         </div>
 
@@ -106,43 +103,48 @@
 
 
         </section>
+        <!-- End Section For Search API and display songs/url section -->
 
-        <div class="buttons is-flex is-align-content-flex-start pt-4 ">
 
-            <button class="button is-warning">
-                <ion-icon name="musical-notes-outline"></ion-icon>Clear Playlist
+        <!--Start Local Storage/My Playlist Section-->
+        <div class="buttons is-flex is-align-content-flex-start pt-4 pr-6 " style="height: 80vw">
+            <div class="pt-5">
+                <button class="button is-warning is-justify-content-center" id="clear-playlist">
+                    <ion-icon name="musical-notes-outline"></ion-icon>Clear Playlist
 
-            </button>
+                </button>
 
-            <div>
+                <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">My Playlist</h3>
 
-                <h3 class="has-text-warning is-flex is-justify-content-center has-background-link">My Playlist Favorites</h3>
-
-                <div class="box">
-                    <ul>
+                <div class="box" style="width: 40vw">
+                    <ul id="favorites">
 
                     </ul>
                 </div>
             </div>
 
         </div>
+        <!--End Local Storage/My Playlist Section-->
 
     </main>
+    <!--End Main Content Section -->
 
-
-
-
-
+    <!--Start Footer-->
     <Footer class="has-text-warning pl-6 pt-6"> Music Lover &copy;
 
     </Footer>
+    <!--End Footer-->
 
-
-
+    <!-- JQUERY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- JavaScript -->
     <script src="./assets/js/script.js"></script>
+    <!-- ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- ionicons -->
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
 </body>
+<!--End Body -->
 
 </html>
