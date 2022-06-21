@@ -10,6 +10,8 @@ $("#click-celebrity").click(function () {
 
 });
 
+
+
 //Function to fetch data from Genius API
 var getArtistData = function () {
   text = $("#type-artist-name").val();
